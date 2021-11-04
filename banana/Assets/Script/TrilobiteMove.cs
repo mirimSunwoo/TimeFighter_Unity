@@ -206,4 +206,9 @@ public class TrilobiteMove : MonoBehaviour
         // animator.SetTrigger("doDamaged");
     }
 
+    public void VelocityZero()
+    {
+        rigid.velocity = Vector2.zero;
+    }
+
 }

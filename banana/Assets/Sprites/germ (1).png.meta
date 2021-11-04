@@ -1,25 +1,25 @@
 fileFormatVersion: 2
-guid: 60551decd05d32e4f929bcebaa43eed1
+guid: 9d25e322fc6deb549bcabb3f0c75bc82
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8334651344603559088
-    second: fire_0
+      213: 4398770174849995470
+    second: germ (1)_0
   - first:
-      213: 9204931480678746970
-    second: fire_1
+      213: -2064242368931582677
+    second: germ (1)_1
   - first:
-      213: -8359625512513901107
-    second: fire_2
+      213: -4727112369006040677
+    second: germ (1)_2
   - first:
-      213: 7804807344221744696
-    second: fire_3
+      213: 4340591982919185896
+    second: germ (1)_3
   - first:
-      213: -9112466456087325836
-    second: fire_4
+      213: -8256647353099617629
+    second: germ (1)_4
   - first:
-      213: 173077104931781641
-    second: fire_5
+      213: -7697417748248424114
+    second: germ (1)_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -64,7 +64,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 8
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -109,13 +109,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: fire_0
+      name: germ (1)_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 704
-        width: 352
-        height: 352
+        y: 1828
+        width: 900
+        height: 914
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -123,20 +123,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0b4b3d13d31aaa370800000000000000
-      internalID: 8334651344603559088
+      spriteID: ec254881b229b0d30800000000000000
+      internalID: 4398770174849995470
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fire_1
+      name: germ (1)_1
       rect:
         serializedVersion: 2
-        x: 352
-        y: 704
-        width: 352
-        height: 352
+        x: 900
+        y: 1828
+        width: 900
+        height: 914
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -144,20 +144,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a5bcaaf696c7ebf70800000000000000
-      internalID: 9204931480678746970
+      spriteID: b2da58590865a53e0800000000000000
+      internalID: -2064242368931582677
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fire_2
+      name: germ (1)_2
       rect:
         serializedVersion: 2
         x: 0
-        y: 352
-        width: 352
-        height: 352
+        y: 914
+        width: 900
+        height: 914
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -165,20 +165,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dcde05733e4acfb80800000000000000
-      internalID: -8359625512513901107
+      spriteID: b992a00885ce56eb0800000000000000
+      internalID: -4727112369006040677
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fire_3
+      name: germ (1)_3
       rect:
         serializedVersion: 2
-        x: 352
-        y: 352
-        width: 352
-        height: 352
+        x: 900
+        y: 914
+        width: 900
+        height: 914
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -186,20 +186,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 83e62bc8dee305c60800000000000000
-      internalID: 7804807344221744696
+      spriteID: 8e57ec83961ec3c30800000000000000
+      internalID: 4340591982919185896
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fire_4
+      name: germ (1)_4
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 352
-        height: 352
+        width: 900
+        height: 914
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -207,20 +207,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4739041c9040a8180800000000000000
-      internalID: -9112466456087325836
+      spriteID: 3aaf3da5afe7a6d80800000000000000
+      internalID: -8256647353099617629
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fire_5
+      name: germ (1)_5
       rect:
         serializedVersion: 2
-        x: 352
+        x: 900
         y: 0
-        width: 352
-        height: 352
+        width: 900
+        height: 914
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -228,8 +228,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 90c363eb5b4e66200800000000000000
-      internalID: 173077104931781641
+      spriteID: e419dd337574d2590800000000000000
+      internalID: -7697417748248424114
       vertices: []
       indices: 
       edges: []

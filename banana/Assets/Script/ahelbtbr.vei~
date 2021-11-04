@@ -94,7 +94,7 @@ public class GameManager : MonoBehaviour
 
     void PlayerReposition()
     {
-        player.transform.position = new Vector3(-899, 732, 0);      // Player의 시작지점 x축, y축, z축
+        player.transform.position = new Vector3(-957, 730, 0);      // Player의 시작지점 x축, y축, z축
         player.VelocityZero();
     }
 
