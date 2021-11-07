@@ -6,11 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+
     public int totalPoint;
     public int stagePoint;
     public int stageIndex;
     public int health;
-    public TrilobiteMove player;
+    public PlayerMove player;
     public GameObject[] Stages;
 
     public Image[] UIhealth;
@@ -45,62 +46,64 @@ public class GameManager : MonoBehaviour
             // Restart Button UI
             UIRestartBtn.SetActive(true);
             Text btnText = UIRestartBtn.GetComponentInChildren<Text>();
-            btnText.text = "Clear";
+            btnText.text = "Game Clear";
             UIRestartBtn.SetActive(true);
         }
 
         // Calculate Point
         totalPoint += stagePoint;
         stagePoint = 0;
+
     }
 
-    public void HealthDown()
-    {
-        if (health > 1)
+        public void HealthDown()
         {
-            health--;
-            UIhealth[health].color = new Color(1, 0, 0, 0.4f);
-        }
-        else
-        {
-            // All Health UI Off
-            UIhealth[0].color = new Color(1, 0, 0, 0.4f);
-
-            // Player Die Effect
-            player.OnDie();
-
-            // Result UI
-            Debug.Log("죽었습니다!");
-
-            // Retry Button UI
-            UIRestartBtn.SetActive(true);
-        }
-    }
-
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            // Player Reposition
             if (health > 1)
             {
-                PlayerReposition();
+                health--;
+                UIhealth[health].color = new Color(1, 0, 0, 0.4f);
             }
-            // Health Down
-            HealthDown();
+            else
+            {
 
+                // All Health UI Off
+                UIhealth[0].color = new Color(1, 0, 0, 0.4f);
+
+                // Player Die Effect
+                player.OnDie();
+
+                // Result UI
+                Debug.Log("죽었습니다!");
+
+                // Retry Button UI
+                UIRestartBtn.SetActive(true);
+            }
+        }
+
+        void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.gameObject.tag == "Player")
+            {
+                // Player Reposition
+                if (health > 1)
+                {
+                    PlayerReposition();
+                }
+                // Health Down
+                HealthDown();
+
+            }
+        }
+
+        void PlayerReposition()
+        {
+            player.transform.position = new Vector3(0, 0, 0);      // Player의 시작지점 x축, y축, z축
+            player.VelocityZero();
+        }
+
+        public void Restart()
+        {
+            Time.timeScale = 1;
+            SceneManager.LoadScene(1);
         }
     }
-
-    void PlayerReposition()
-    {
-        player.transform.position = new Vector3(-899, 732, 0);      // Player의 시작지점 x축, y축, z축
-        player.VelocityZero();
-    }
-
-    public void Restart()
-    {
-        Time.timeScale = 1;
-        SceneManager.LoadScene(1);
-    }
-}
