@@ -56,54 +56,54 @@ public class GameManager : MonoBehaviour
 
     }
 
-        public void HealthDown()
+    public void HealthDown()
+    {
+        if (health > 1)
         {
-            if (health > 1)
-            {
-                health--;
-                UIhealth[health].color = new Color(1, 0, 0, 0.4f);
-            }
-            else
-            {
-
-                // All Health UI Off
-                UIhealth[0].color = new Color(1, 0, 0, 0.4f);
-
-                // Player Die Effect
-                player.OnDie();
-
-                // Result UI
-                Debug.Log("죽었습니다!");
-
-                // Retry Button UI
-                UIRestartBtn.SetActive(true);
-            }
+            health--;
+            UIhealth[health].color = new Color(1, 0, 0, 0.4f);
         }
-
-        void OnTriggerEnter2D(Collider2D collision)
+        else
         {
-            if (collision.gameObject.tag == "Player")
-            {
-                // Player Reposition
-                if (health > 1)
-                {
-                    PlayerReposition();
-                }
-                // Health Down
-                HealthDown();
 
-            }
-        }
+            // All Health UI Off
+            UIhealth[0].color = new Color(1, 0, 0, 0.4f);
 
-        void PlayerReposition()
-        {
-            player.transform.position = new Vector3(0, 0, 0);      // Player의 시작지점 x축, y축, z축
-            player.VelocityZero();
-        }
+            // Player Die Effect
+            player.OnDie();
 
-        public void Restart()
-        {
-            Time.timeScale = 1;
-            SceneManager.LoadScene(1);
+            // Result UI
+            Debug.Log("죽었습니다!");
+
+            // Retry Button UI
+            UIRestartBtn.SetActive(true);
         }
     }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            // Player Reposition
+            if (health > 1)
+            {
+                PlayerReposition();
+            }
+            // Health Down
+            HealthDown();
+
+        }
+    }
+
+    void PlayerReposition()
+    {
+        player.transform.position = new Vector3(0, 0, 0);      // Player의 시작지점 x축, y축, z축
+        player.VelocityZero();
+    }
+
+    public void Restart()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(1);
+    }
+}

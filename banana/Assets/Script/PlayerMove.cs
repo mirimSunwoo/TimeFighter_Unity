@@ -102,10 +102,10 @@ public class PlayerMove : MonoBehaviour
 
 
     // Detach Event
-    void OnTriggerExit2D(Collider2D other)
-    {
-        Debug.Log("Detach : " + other.gameObject.layer);
-    }
+    //void OnTriggerExit2D(Collider2D other)
+    //{
+    //    Debug.Log("Detach : " + other.gameObject.layer);
+    //}
 
     // Physics engine Updates
     void FixedUpdate()
@@ -188,13 +188,79 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
+    //void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.tag == "Enemy")
+    //    {
+    //        // Attack
+    //        if (rigid.velocity.y < 0 && transform.position.y > collision.transform.position.y)
+    //        {
+    //            OnAttack(collision.transform);
+    //        }
+    //        else // Damaged
+    //            OnDamaged(collision.transform.position);
+    //    }
+    //}
+
+    //void OnAttack(Transform enemy)
+    //{
+    //    // Point
+    //    gameManager.stagePoint += 100;
+
+    //    // Reaction Force
+    //    rigid.AddForce(Vector2.up * 10, ForceMode2D.Impulse);
+
+    //    // Enemy Die
+    //    EnemyMove enemyMove = enemy.GetComponent<EnemyMove>();
+    //    enemyMove.OnDamaged();
+    //}
+
+    //void OnAttack(Transform enemy)
+    //{
+
+    //    //Reaction Force : 반동(플레이어가 튕겨져나감)
+    //    rigid.AddForce(Vector2.up * 10, ForceMode2D.Impulse);
+
+    //    //Enemy Die
+    //    //몬스터에 적용한 스크립트의 함수를 사용하기위해 해당 클래스의 변수를 선언해서 초기화
+    //    EnemyMove enemyMove = enemy.GetComponent<EnemyMove>();
+    //    enemyMove.OnDamaged(); // 몬스터가 데미지를 입었을때 실행할 함수를 불러옴 
+
+    //}
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        //일정속도로 몬스터를 밟게되면
+        if (other.gameObject.tag == "Enemy" && !other.isTrigger && rb.velocity.y < -5f)
+        {
+            Monster creature = other.gameObject.GetComponent<Monster>();
+            //몬스터의 Die함수 호출 
+            creature.Die();
+
+            //바운스
+            Vector2 killVelocity = new Vector2(0, 30f);
+            rb.AddForce(killVelocity, ForceMode2D.Impulse);
+
+            //스코어 매니저에 몬스터의 점수 저장
+            ScoreManager.setScore(creature.score);
+        }
+
+        if (other.gameObject.tag == "Coin")
+        {
+            GetCoin coin = other.gameObject.GetComponent<GetCoin>();
+            ScoreManager.setScore((int)coin.value);
+
+            Destroy(other.gameObject, 0f);
+        }
+    }
+
     void onDamaged(Vector2 targetPos)
     {
         // Health Down
         gameManager.HealthDown();
 
         // Change Layer (Immortal Active)
-        gameObject.layer = 11;
+        gameObject.layer = 12;
 
         // View Alpha
         spriteRenderer.color = new Color(1, 1, 1, 0.4f);
@@ -211,7 +277,7 @@ public class PlayerMove : MonoBehaviour
 
     void OffDamaged()
     {
-        gameObject.layer = 10;
+        gameObject.layer = 13;
         spriteRenderer.color = new Color(1, 1, 1, 1);
     }
 
@@ -227,7 +293,7 @@ public class PlayerMove : MonoBehaviour
         rigid.AddForce(Vector2.up * 5, ForceMode2D.Impulse);
 
         // 죽는 애니메이션 넣기
-        // animator.SetTrigger("doDamaged");
+        //animator.SetTrigger("doDie");
     }
 
     public void VelocityZero()
