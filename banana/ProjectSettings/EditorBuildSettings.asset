@@ -6,12 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Temp/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/FirstView.unity
+    guid: c8379d651e676fb43956455c17739d7d
+  - enabled: 1
+    path: Assets/Scenes/Ranking.unity
+    guid: 059e5e024cf5ece4497a6b6648364d82
   - enabled: 1
     path: Assets/Scenes/MicroStage.unity
     guid: b9a2fb0f800ed5a4f98922c7c6729914
-  - enabled: 1
+  - enabled: 0
+    path: Assets/Scenes/Temp/SampleScene.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 0
     path: Assets/Scenes/Temp/Main.unity
     guid: ab11209596dfa3341891ae05a05df25e
   m_configObjects: {}

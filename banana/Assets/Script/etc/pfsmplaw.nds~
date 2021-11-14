@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-
     public int totalPoint;
     public int stagePoint;
     public int stageIndex;
@@ -46,14 +45,13 @@ public class GameManager : MonoBehaviour
             // Restart Button UI
             UIRestartBtn.SetActive(true);
             Text btnText = UIRestartBtn.GetComponentInChildren<Text>();
-            btnText.text = "Game Clear";
+            btnText.text = "Clear";
             UIRestartBtn.SetActive(true);
         }
 
         // Calculate Point
         totalPoint += stagePoint;
         stagePoint = 0;
-
     }
 
     public void HealthDown()
@@ -65,7 +63,6 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-
             // All Health UI Off
             UIhealth[0].color = new Color(1, 0, 0, 0.4f);
 
@@ -78,6 +75,24 @@ public class GameManager : MonoBehaviour
             // Retry Button UI
             UIRestartBtn.SetActive(true);
         }
+    }
+
+    public void HealthUp()
+    {
+        if (health == 3)
+        {
+            health++;
+        }else if(health == 2)
+        {
+            health++;
+            UIhealth[1].color = new Color(1, 1, 1, 1);
+        }
+        else if(health == 1)
+        {
+            health++;
+            UIhealth[2].color = new Color(1, 1, 1, 1);
+        }
+
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -97,7 +112,7 @@ public class GameManager : MonoBehaviour
 
     void PlayerReposition()
     {
-        player.transform.position = new Vector3(0, 0, 0);      // Player의 시작지점 x축, y축, z축
+        player.transform.position = new Vector3(1, 1, -1);      // Player의 시작지점 x축, y축, z축
         player.VelocityZero();
     }
 

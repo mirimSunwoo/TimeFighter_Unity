@@ -14,10 +14,14 @@ public class PlayerMove : MonoBehaviour
     Rigidbody2D rigid;
     SpriteRenderer spriteRenderer;
     Animator animator;
-    BoxCollider2D boxCollider;
+    PolygonCollider2D polygonCollider;
 
     Vector3 movement;
     bool isJumping = false;
+
+    private float item_jump_cooltime;
+
+    public int RandomInt;
 
     //----------------------------------------[Overrid Function]
 
@@ -27,13 +31,16 @@ public class PlayerMove : MonoBehaviour
         rigid = GetComponent<Rigidbody2D>();
         animator = gameObject.GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        boxCollider = GetComponent<BoxCollider2D>();
+        polygonCollider = GetComponent<PolygonCollider2D>();
 
     }
 
     // Graphic & Input Updates
     void Update()
     {
+        
+        RandomInt = UnityEngine.Random.Range(1, 4);
+
         // Moving
         if (Input.GetAxisRaw("Horizontal") == 0)
         {
@@ -59,17 +66,48 @@ public class PlayerMove : MonoBehaviour
             animator.SetBool("isJumping", true);    // Jumping Flog
             animator.SetTrigger("doJumping");   // Jumping Animation
         }
+
+        if (jumpPower == 20.0f)
+        {
+            item_jump_cooltime += Time.deltaTime;
+            if (item_jump_cooltime > 10)
+            {
+                jumpPower = 14.0f;
+            }
+            animator.SetTrigger("doItem");
+        }
     }
 
     // Attach Event
     void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Attach : " + collision.gameObject.layer);
+
+        //Debug.Log("Attach : " + collision.gameObject.layer);
 
         if (collision.gameObject.layer == 8 && rigid.velocity.y < 0)
             animator.SetBool("isJumping", false);   // Landing
 
-        if (collision.gameObject.tag == "Item")
+        // Enemy hit
+        if (collision.gameObject.tag == "Enemy" && !collision.isTrigger && rigid.velocity.y < -6f)  // -6f : 값이 작아질 수록 판정이 약해짐
+        {
+
+            //gameObject.layer = 13;
+            //spriteRenderer.color = new Color(1, 1, 1, 1);
+            
+
+            EnemyMove enemy = collision.gameObject.GetComponent<EnemyMove>();
+            enemy.Attack();
+
+            // 뭘까
+            //Vector2 killVelocity = new Vector2(0, 13f);
+            //rigid.AddForce(killVelocity, ForceMode2D.Impulse);
+
+            //gameManager.HealthUp();
+
+
+        }
+
+        if (collision.gameObject.tag == "coin")
         {
             // Point
             bool isBronze = collision.gameObject.name.Contains("Bronze");
@@ -91,21 +129,68 @@ public class PlayerMove : MonoBehaviour
 
             // Deactive Item
             collision.gameObject.SetActive(false);
-        }else if(collision.gameObject.tag == "portal")
+        }
+        else if (collision.gameObject.tag == "portal")
         {
             // Next Stage
             gameManager.NextStage();
         }
+        if (collision.gameObject.tag == "healthItem")
+        {
+            gameManager.HealthUp();
+        }
+        if (collision.gameObject.tag == "invincibleItem")
+        {
+            animator.SetTrigger("doItem");
+            StartCoroutine("GetInvincible");
+        }
+        if (collision.gameObject.tag == "random")
+        {
+            Random();
+        }
 
     }
 
+    void Random()
+    {
+        if (RandomInt == 1) // RandomInt가 1이라면
+        {
+            gameManager.HealthUp();
+            Debug.Log("효과 : 생명증가");
+        }
+        else if (RandomInt == 2)
+        {
+            StartCoroutine("GetInvincible");
+            Debug.Log("효과 : 무적");
+        }
+        else if (RandomInt == 3)
+        {
+            jumpPower = 20.0f;
+            if (jumpPower == 20.0f)
+            {
+                item_jump_cooltime += Time.deltaTime;
+                if (item_jump_cooltime > 10)
+                {
+                    jumpPower = 14.0f;
+                }
+                animator.SetTrigger("doItem");
+            }
+            Debug.Log("효과 : 점프 증진");
+        }
+    }
 
+    IEnumerator GetInvincible()//무적아이템 무적
+    {
+        Physics2D.IgnoreLayerCollision(13, 14, true);
+        yield return new WaitForSeconds(10f);
+        Physics2D.IgnoreLayerCollision(13, 14, false);
+    }
 
     // Detach Event
-    //void OnTriggerExit2D(Collider2D other)
-    //{
-    //    Debug.Log("Detach : " + other.gameObject.layer);
-    //}
+    void OnTriggerExit2D(Collider2D other)
+    {
+        Debug.Log("Detach : " + other.gameObject.layer);
+    }
 
     // Physics engine Updates
     void FixedUpdate()
@@ -180,13 +265,95 @@ public class PlayerMove : MonoBehaviour
         isJumping = false;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Enemy")
         {
             onDamaged(collision.transform.position);
         }
+        if(collision.gameObject.tag == "spikes")
+        {
+            onDamaged(collision.transform.position);
+        }
+        if (collision.gameObject.CompareTag("item_jump"))
+        {
+            jumpPower = 20.0f;
+        }
     }
+
+    void onDamaged(Vector2 targetPos)
+    {
+        // Health Down
+        gameManager.HealthDown();
+
+        // Change Layer (Immortal Active)
+        gameObject.layer = 12;
+
+        // View Alpha
+        spriteRenderer.color = new Color(1, 1, 1, 0.4f);
+
+        // Reaction Force
+        int dirc = transform.position.x - targetPos.x > 0 ? 1 : -1;
+        rigid.AddForce(new Vector2(dirc, 1) * 7, ForceMode2D.Impulse);
+
+        // Animation
+        //animator.SetTrigger("doDamaged");
+
+        Invoke("OffDamaged", 2);    // 함수 호출
+    }
+
+    //void onDamaged(Vector2 targetPos)
+    //{
+    //    // Health Down
+    //    //gameManager.HealthDown();
+
+    //    // Change Layer (Immortal Active)
+    //    gameObject.layer = 12;
+
+    //    // View Alpha
+    //    spriteRenderer.color = new Color(1, 1, 1, 0.4f);
+
+    //    // Reaction Force
+    //    int dirc = transform.position.x - targetPos.x > 0 ? 1 : -1;
+    //    rigid.AddForce(new Vector2(dirc, 1) * 3, ForceMode2D.Impulse);
+
+    //    // Animation
+    //    animator.SetTrigger("doDamaged");
+
+    //    Invoke("OffDamaged", 3);    // 함수 호출
+    //}
+
+    //void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.tag == "Enemy")
+    //    {
+    //        // Attack
+    //        if (rigid.velocity.y < 0 && transform.position.y > collision.transform.position.y)
+    //        {
+    //            OnAttack(collision.transform);
+    //            //PlaySound("ATTACK");
+    //            audioSource.clip = audioAttack;
+    //            audioSource.Play();
+    //        }
+    //        else // Damaged
+    //            OnDamaged(collision.transform.position);
+    //    }
+    //}
+
+    //void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.CompareTag == "Enemy")
+    //    {
+    //        if (rigid.velocity.y < 0 && transform.position.y > collision.transform.position.y)
+    //            OnAttack(collision.transform);
+    //        onDamaged(collision.transform.position);
+    //    }
+
+    //    if (collision.gameObject.CompareTag("item_jump"))
+    //    {
+    //        jumpPower = 20.0f;
+    //    }
+    //}
 
     //void OnCollisionEnter2D(Collision2D collision)
     //{
@@ -215,65 +382,7 @@ public class PlayerMove : MonoBehaviour
     //    enemyMove.OnDamaged();
     //}
 
-    //void OnAttack(Transform enemy)
-    //{
 
-    //    //Reaction Force : 반동(플레이어가 튕겨져나감)
-    //    rigid.AddForce(Vector2.up * 10, ForceMode2D.Impulse);
-
-    //    //Enemy Die
-    //    //몬스터에 적용한 스크립트의 함수를 사용하기위해 해당 클래스의 변수를 선언해서 초기화
-    //    EnemyMove enemyMove = enemy.GetComponent<EnemyMove>();
-    //    enemyMove.OnDamaged(); // 몬스터가 데미지를 입었을때 실행할 함수를 불러옴 
-
-    //}
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        //일정속도로 몬스터를 밟게되면
-        if (other.gameObject.tag == "Enemy" && !other.isTrigger && rb.velocity.y < -5f)
-        {
-            Monster creature = other.gameObject.GetComponent<Monster>();
-            //몬스터의 Die함수 호출 
-            creature.Die();
-
-            //바운스
-            Vector2 killVelocity = new Vector2(0, 30f);
-            rb.AddForce(killVelocity, ForceMode2D.Impulse);
-
-            //스코어 매니저에 몬스터의 점수 저장
-            ScoreManager.setScore(creature.score);
-        }
-
-        if (other.gameObject.tag == "Coin")
-        {
-            GetCoin coin = other.gameObject.GetComponent<GetCoin>();
-            ScoreManager.setScore((int)coin.value);
-
-            Destroy(other.gameObject, 0f);
-        }
-    }
-
-    void onDamaged(Vector2 targetPos)
-    {
-        // Health Down
-        gameManager.HealthDown();
-
-        // Change Layer (Immortal Active)
-        gameObject.layer = 12;
-
-        // View Alpha
-        spriteRenderer.color = new Color(1, 1, 1, 0.4f);
-
-        // Reaction Force
-        int dirc = transform.position.x - targetPos.x > 0 ? 1 : -1;
-        rigid.AddForce(new Vector2(dirc, 1) * 3, ForceMode2D.Impulse);
-
-        // Animation
-        animator.SetTrigger("doDamaged");
-
-        Invoke("OffDamaged", 3);    // 함수 호출
-    }
 
     void OffDamaged()
     {
@@ -286,14 +395,14 @@ public class PlayerMove : MonoBehaviour
         // Sprite Alpha
         spriteRenderer.color = new Color(1, 1, 1, 0.4f);
         // Sprite Flip Y
-        spriteRenderer.flipY = true;
+        //spriteRenderer.flipY = true;
         // Collider Disable
-        boxCollider.enabled = false;
+        polygonCollider.enabled = false;
         // Die Effect Jump
-        rigid.AddForce(Vector2.up * 5, ForceMode2D.Impulse);
+        //rigid.AddForce(Vector2.up * 5, ForceMode2D.Impulse);
 
         // 죽는 애니메이션 넣기
-        //animator.SetTrigger("doDie");
+        animator.SetTrigger("doDie");
     }
 
     public void VelocityZero()

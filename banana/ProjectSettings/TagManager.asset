@@ -11,6 +11,12 @@ TagManager:
   - endpoint
   - Enemy
   - jumpGround
+  - healthItem
+  - invincibleItem
+  - hit
+  - coin
+  - random
+  - spikes
   layers:
   - Default
   - TransparentFX
