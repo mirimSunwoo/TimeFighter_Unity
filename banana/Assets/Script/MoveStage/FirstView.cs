@@ -47,4 +47,10 @@ public class FirstView : MonoBehaviour
             score.stagePoint = 0;
         }
     }
+
+    public void Special()
+    {
+        ResetScore();
+        SceneManager.LoadScene(12);
+    }
 }

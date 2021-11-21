@@ -29,4 +29,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PlayScenes/MammaliaStage.unity
     guid: 6fc28ed81ac74c243b3efe7a0e811a76
+  - enabled: 1
+    path: Assets/Scenes/PlayScenes/BirdStage.unity
+    guid: 7c6d442d2cc0e8b4ea18441080a07fdd
+  - enabled: 1
+    path: Assets/Scenes/PlayScenes/SimianStage.unity
+    guid: 607cf3e3d601b67419890d0941b610a4
+  - enabled: 1
+    path: Assets/Scenes/PlayScenes/HomoStage.unity
+    guid: 41cd96233b09317419f2ddcea9304d3d
+  - enabled: 1
+    path: Assets/Scenes/PlayScenes/HumanStage.unity
+    guid: a751332b155d4c3419c2d321560b30b4
+  - enabled: 1
+    path: Assets/Scenes/PlayScenes/AlienStage.unity
+    guid: 16ac3154fb653b5419401a25dcd08a01
   m_configObjects: {}
