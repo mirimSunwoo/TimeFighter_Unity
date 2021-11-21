@@ -20,21 +20,21 @@ public class EnemyMove : MonoBehaviour
 
     public Slider HealthBar;
 
-    public GameObject GoldCoin;
-    public GameObject SilverCoin;
-    public GameObject BronzeCoin;
-    public GameObject portal;
-
     public GameManager gameManager;
 
     PolygonCollider2D polygonCollider;
+    BoxCollider2D boxCollider;
+    CapsuleCollider2D capsuleCollider2D;
 
 
     void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        boxCollider = GetComponent<BoxCollider2D>();
         polygonCollider = GetComponent<PolygonCollider2D>();
+        capsuleCollider2D = GetComponent<CapsuleCollider2D>();
+
     }
 
     //void OnHit(int dmg)
@@ -115,28 +115,6 @@ public class EnemyMove : MonoBehaviour
 
         if (enemyhealth == 0)
         {
-
-            // 괴물 죽었을 때 아이템 드랍
-
-            //int ran = UnityEngine.Random.Range(1, 5);
-            //if (ran == 1) // 50%
-            //{
-            //    Instantiate(SilverCoin, transform.position, SilverCoin.transform.rotation);
-            //}
-            //else if (ran == 2)   // 80%
-            //{
-            //    Instantiate(GoldCoin, transform.position, GoldCoin.transform.rotation);
-            //}
-            //else if (ran == 3)   // 90%
-            //{
-            //    Instantiate(SilverCoin, transform.position, SilverCoin.transform.rotation);
-            //}
-            //else if (ran == 4)   // 90%
-            //{
-            //    Instantiate(BronzeCoin, transform.position, BronzeCoin.transform.rotation);
-            //}
-
-
             // Die 혹은 Destroy
             Die();
             //Destroy(gameObject);
@@ -145,7 +123,9 @@ public class EnemyMove : MonoBehaviour
 
     public void Die()
     {
-        gameManager.stagePoint += 500;  // 괴물 죽일 떄 점수
+
+        ScoreManager score = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
+        score.stagePoint += 300;  // 괴물 죽일 떄 점수
 
         //코루틴 정지
         StopCoroutine("ChangeMovement");
@@ -156,16 +136,19 @@ public class EnemyMove : MonoBehaviour
         renderer.flipY = true;
 
         //낙하
-        PolygonCollider2D polygonCollider = gameObject.GetComponent<PolygonCollider2D>();
+        // 다 넣기..
+        boxCollider.enabled = false;
         polygonCollider.enabled = false;
+        capsuleCollider2D.enabled = false;
 
         //바운스
         Rigidbody2D rigid = gameObject.GetComponent<Rigidbody2D>();
         Vector2 dieVelocity = new Vector2(0, 5f);
         rigid.AddForce(dieVelocity, ForceMode2D.Impulse);
 
-        //오브젝트 삭제
-        Destroy(gameObject, 3.0f);
+
+        // 적 죽으면 포탈 생김
+        gameManager.Portal.SetActive(true);
 
     }
 

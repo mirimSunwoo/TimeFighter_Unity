@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public int totalPoint;
-    public int stagePoint;
+    //public int totalPoint;
+    //public int stagePoint;
     public int stageIndex;
     public int health;
     public PlayerMove player;
@@ -16,42 +16,60 @@ public class GameManager : MonoBehaviour
     public Image[] UIhealth;
     public Text UIPoint;
     public Text UIStage;
-    public GameObject UIRestartBtn;
 
-    void Update()
-    {
-        UIPoint.text = (totalPoint + stagePoint).ToString();
-    }
+    public GameObject UIImg;
+    public GameObject UIRestartBtn;
+    public GameObject UIRetryBtn;
+    public GameObject UINextBtn;
+    public GameObject UIHomeBtn;
+    public GameObject ClearStory;
+    public GameObject DieStory;
+    public GameObject Defeat;
+    public GameObject Clear;
+
+    public GameObject Player;
+    public GameObject Portal;
+
+    //void awake()
+    //{
+    //    dontdestroyonload(gameobject);
+    //}
+
+    //void update()
+    //{
+    //    uipoint.text = (totalpoint + stagepoint).tostring();
+    //}
 
     public void NextStage()
     {
         // Change Stage
-        if (stageIndex < Stages.Length - 1)
-        {
-            Stages[stageIndex].SetActive(false);
-            stageIndex++;
-            Stages[stageIndex].SetActive(true);
-            PlayerReposition();
+        //if (stageIndex < Stages.Length - 1)
+        //{
+        //    Stages[stageIndex].SetActive(false);
+        //    stageIndex++;
+        //    Stages[stageIndex].SetActive(true);
+        //    PlayerReposition();
 
-            UIStage.text = "STAGE " + (stageIndex + 1);
-        }
-        else
-        // Game Clear
-        {
-            // Player Control Lock
-            Time.timeScale = 0;
-            // Result UI
-            Debug.Log("게임 클리어!");
-            // Restart Button UI
-            UIRestartBtn.SetActive(true);
-            Text btnText = UIRestartBtn.GetComponentInChildren<Text>();
-            btnText.text = "Clear";
-            UIRestartBtn.SetActive(true);
-        }
+        //    UIStage.text = "STAGE " + (stageIndex + 1);
+        //}
+        //else
+        //// Game Clear
+        //{
+        //    // Player Control Lock
+        //    Time.timeScale = 0;
+        //    // Result UI
+        //    Debug.Log("1단계 클리어!");
+        //    // Restart Button UI
+        //    UIRestartBtn.SetActive(true);
+        //    Text btnText = UIRestartBtn.GetComponentInChildren<Text>();
+        //    btnText.text = "Next!";
+        //    UIRestartBtn.SetActive(true);
+        //}
 
         // Calculate Point
-        totalPoint += stagePoint;
-        stagePoint = 0;
+        //totalPoint += stagePoint;
+        ScoreManager score = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
+        score.stagePoint = 0;
     }
 
     public void HealthDown()
@@ -59,11 +77,14 @@ public class GameManager : MonoBehaviour
         if (health == 2)
         {
             health--;
-            UIhealth[health].color = new Color(1, 0, 0, 0.4f);
-        }else if(health == 3)
+            UIhealth[health].color = new Color(0, 0, 0, 0);
+            UIhealth[6].color = new Color(1, 1, 1, 1);
+        }
+        else if(health == 3)
         {
             health--;
-            UIhealth[health].color = new Color(1, 0, 0, 0.4f);
+            UIhealth[health].color = new Color(0, 0, 0, 0);
+            UIhealth[7].color = new Color(1, 1, 1, 1);
         }
         else if(health > 3)
         {
@@ -73,7 +94,8 @@ public class GameManager : MonoBehaviour
         else
         {
             // All Health UI Off
-            UIhealth[0].color = new Color(1, 0, 0, 0.4f);
+            UIhealth[0].color = new Color(0, 0, 0, 0);
+            UIhealth[5].color = new Color(1, 1, 1, 1);
 
             // Player Die Effect
             player.OnDie();
@@ -82,7 +104,27 @@ public class GameManager : MonoBehaviour
             Debug.Log("죽었습니다!");
 
             // Retry Button UI
-            UIRestartBtn.SetActive(true);
+            Invoke("Retry", 2);
+
+        }
+    }
+
+    // 죽으면 화면 켜짐
+    void Retry()
+    {
+        Defeat.SetActive(true);
+        DieStory.SetActive(true);
+        UIImg.SetActive(true);
+        UIRetryBtn.SetActive(true);
+        UIHomeBtn.SetActive(true);
+    }
+
+    public void healthdown()
+    {
+        if(health > 1)
+        {
+            health--;
+            UIhealth[health].color = new Color(1, 0, 0, 0.4f);
         }
     }
 
@@ -93,10 +135,13 @@ public class GameManager : MonoBehaviour
         {
             health++;
             UIhealth[1].color = new Color(1, 1, 1, 1);
-        }else if (health == 2)
+            UIhealth[6].color = new Color(0, 0, 0, 0);
+        }
+        else if (health == 2)
         {
             health++;
             UIhealth[2].color = new Color(1, 1, 1, 1);
+            UIhealth[7].color = new Color(0, 0, 0, 0);
         }
         else if (health == 3)
         {
@@ -129,12 +174,25 @@ public class GameManager : MonoBehaviour
     void PlayerReposition()
     {
         player.transform.position = new Vector3(1, 1, -1);      // Player의 시작지점 x축, y축, z축
-        player.VelocityZero();
+        //player.VelocityZero();
     }
 
-    public void Restart()
-    {
-        Time.timeScale = 1;
-        SceneManager.LoadScene(1);
-    }
+    //public void Restart()
+    //{
+    //    ScoreManager score = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
+    //    score.stagePoint = 0;
+
+    //    Time.timeScale = 1;
+    //    SceneManager.LoadScene(2);
+    //}
+    //public void Next()
+    //{
+    //    Time.timeScale = 1;
+    //    SceneManager.LoadScene(3);
+    //}
+    //public void Home()
+    //{
+    //    Time.timeScale = 1;
+    //    SceneManager.LoadScene(0);
+    //}
 }

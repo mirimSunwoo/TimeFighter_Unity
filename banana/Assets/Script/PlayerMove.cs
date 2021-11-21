@@ -10,6 +10,7 @@ public class PlayerMove : MonoBehaviour
     private float realJumpPower = 5f; // 실제 점프 힘
     //public int maxHealth = 3;
     public GameManager gameManager;
+    //public ScoreManager scoreManager;
 
     Rigidbody2D rigid;
     SpriteRenderer spriteRenderer;
@@ -21,7 +22,8 @@ public class PlayerMove : MonoBehaviour
 
     private float item_jump_cooltime;
 
-    public int RandomInt;
+    //public int RandomInt;
+
 
     //----------------------------------------[Overrid Function]
 
@@ -35,11 +37,12 @@ public class PlayerMove : MonoBehaviour
 
     }
 
+
     // Graphic & Input Updates
     void Update()
     {
         
-        RandomInt = UnityEngine.Random.Range(1, 4);
+        //RandomInt = UnityEngine.Random.Range(1, 4);
 
         // Moving
         if (Input.GetAxisRaw("Horizontal") == 0)
@@ -72,7 +75,7 @@ public class PlayerMove : MonoBehaviour
             item_jump_cooltime += Time.deltaTime;
             if (item_jump_cooltime > 10)
             {
-                jumpPower = 14.0f;
+                jumpPower = 16.0f;
             }
             animator.SetTrigger("doItem");
         }
@@ -88,52 +91,64 @@ public class PlayerMove : MonoBehaviour
             animator.SetBool("isJumping", false);   // Landing
 
         // Enemy hit
-        if (collision.gameObject.tag == "Enemy" && !collision.isTrigger && rigid.velocity.y < -6f)  // -6f : 값이 작아질 수록 판정이 약해짐
+        if (collision.gameObject.tag == "Enemy" && !collision.isTrigger && rigid.velocity.y < -4f)  // -6f : 값이 작아질 수록 판정이 약해짐
         {
-
-            //gameObject.layer = 13;
-            //spriteRenderer.color = new Color(1, 1, 1, 1);
-            
 
             EnemyMove enemy = collision.gameObject.GetComponent<EnemyMove>();
             enemy.Attack();
 
             // 뭘까
-            //Vector2 killVelocity = new Vector2(0, 13f);
-            //rigid.AddForce(killVelocity, ForceMode2D.Impulse);
+            Vector2 killVelocity = new Vector2(0, 13f);
+            rigid.AddForce(killVelocity, ForceMode2D.Impulse);
 
-            //gameManager.HealthUp();
+            EnemyMove enemyMove = GameObject.Find("Enemy").GetComponent<EnemyMove>();
 
+            if (enemyMove.enemyhealth > 0)
+            {
+                gameManager.HealthUp();
+            }
+
+            
 
         }
 
         if (collision.gameObject.tag == "coin")
         {
             // Point
-            bool isBronze = collision.gameObject.name.Contains("Bronze");
-            bool isSilver = collision.gameObject.name.Contains("Silver");
-            bool isGold = collision.gameObject.name.Contains("Gold");
+            bool isYellow = collision.gameObject.name.Contains("YellowJewelry");
+            bool isMint = collision.gameObject.name.Contains("MintJewelry");
+            bool isRed = collision.gameObject.name.Contains("RedJewelry");
+            bool isPurple = collision.gameObject.name.Contains("PurpleJewelry");
+            bool isRainbow = collision.gameObject.name.Contains("RainbowJewelry");
 
-            if (isBronze)
+            ScoreManager score = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
+
+            if (isYellow)
             {
-                gameManager.stagePoint += 50;
+                score.stagePoint += 50;
             }
-            else if (isSilver)
+            else if (isMint)
             {
-                gameManager.stagePoint += 100;
+                score.stagePoint += 70;
             }
-            else if (isGold)
+            else if (isRed)
             {
-                gameManager.stagePoint += 300;
+                score.stagePoint += 90;
+            }
+            else if (isPurple)
+            {
+                score.stagePoint += 100;
+            }
+            else if (isRainbow)
+            {
+                score.stagePoint += 130;
             }
 
             // Deactive Item
             collision.gameObject.SetActive(false);
-        }
-        else if (collision.gameObject.tag == "portal")
+        }else if (collision.gameObject.tag == "portal")
         {
-            // Next Stage
-            gameManager.NextStage();
+            Invoke("clear", 0.5f);
         }
         if (collision.gameObject.tag == "healthItem")
         {
@@ -141,7 +156,6 @@ public class PlayerMove : MonoBehaviour
         }
         if (collision.gameObject.tag == "invincibleItem")
         {
-            animator.SetTrigger("doItem");
             StartCoroutine("GetInvincible");
         }
         if (collision.gameObject.tag == "random")
@@ -151,19 +165,30 @@ public class PlayerMove : MonoBehaviour
 
     }
 
+    // 포탈 들어가면 화면 켜짐
+    void clear()
+    {
+        // Next Stage
+        gameManager.UIImg.SetActive(true);
+        gameManager.UINextBtn.SetActive(true);
+        gameManager.ClearStory.SetActive(true);
+        gameManager.Clear.SetActive(true);
+    }
+
     void Random()
     {
-        if (RandomInt == 1) // RandomInt가 1이라면
+        int ran = UnityEngine.Random.Range(1, 4);
+        if (ran == 1) // RandomInt가 1이라면
         {
             gameManager.HealthUp();
             Debug.Log("효과 : 생명증가");
         }
-        else if (RandomInt == 2)
+        else if (ran == 2)
         {
             StartCoroutine("GetInvincible");
             Debug.Log("효과 : 무적");
         }
-        else if (RandomInt == 3)
+        else if (ran == 3)
         {
             jumpPower = 20.0f;
             if (jumpPower == 20.0f)
@@ -171,7 +196,7 @@ public class PlayerMove : MonoBehaviour
                 item_jump_cooltime += Time.deltaTime;
                 if (item_jump_cooltime > 10)
                 {
-                    jumpPower = 14.0f;
+                    jumpPower = 16.0f;
                 }
                 animator.SetTrigger("doItem");
             }
@@ -181,9 +206,12 @@ public class PlayerMove : MonoBehaviour
 
     IEnumerator GetInvincible()//무적아이템 무적
     {
+        spriteRenderer.color = new Color(1, 1, 1, 0.4f);
+        animator.SetTrigger("doItem");
         Physics2D.IgnoreLayerCollision(13, 14, true);
         yield return new WaitForSeconds(10f);
         Physics2D.IgnoreLayerCollision(13, 14, false);
+        Invoke("OffDamaged", 5);
     }
 
     // Detach Event
@@ -297,7 +325,8 @@ public class PlayerMove : MonoBehaviour
         rigid.AddForce(new Vector2(dirc, 1) * 7, ForceMode2D.Impulse);
 
         // Animation
-        //animator.SetTrigger("doDamaged");
+        animator.SetTrigger("doDamaged");
+        //animator.ResetTrigger("doItem");
 
         Invoke("OffDamaged", 2);    // 함수 호출
     }
@@ -403,6 +432,8 @@ public class PlayerMove : MonoBehaviour
 
         // 죽는 애니메이션 넣기
         animator.SetTrigger("doDie");
+        //animator.ResetTrigger("doItem");
+        //animator.ResetTrigger("doDamaged");
     }
 
     public void VelocityZero()

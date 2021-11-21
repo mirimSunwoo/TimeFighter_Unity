@@ -5,26 +5,46 @@ using UnityEngine.SceneManagement;
 
 public class FirstView : MonoBehaviour
 {
+    //float time;
 
-    // Start is called before the first frame update
-    void Start()
-    {
+    //void Update()
+    //{
+    //    if (time < 0.5f)
+    //    {
+    //        GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1 - time);
+    //    }
+    //    else
+    //    {
+    //        GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, time);
+    //        if (time > 1f)
+    //        {
+    //            time = 0;
+    //        }
+    //    }
 
-    }
+    //    time += Time.deltaTime;
 
-    // Update is called once per frame
-    void Update()
-    {
+    //}
 
-    }
 
     public void RankingClick()
     {
+        ResetScore();
         SceneManager.LoadScene(1);
     }
 
     public void StartClick()
     {
+        ResetScore();
         SceneManager.LoadScene(2);
+    }
+
+    public void ResetScore()
+    {
+        ScoreManager score = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
+        if (score.stagePoint != 0)
+        {
+            score.stagePoint = 0;
+        }
     }
 }

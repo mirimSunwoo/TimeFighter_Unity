@@ -54,12 +54,12 @@ TagManager:
   - name: background
     uniqueID: 4187238165
     locked: 0
-  - name: Default
-    uniqueID: 0
-    locked: 0
   - name: foreground
     uniqueID: 438333081
     locked: 0
   - name: health
     uniqueID: 2886977733
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0
