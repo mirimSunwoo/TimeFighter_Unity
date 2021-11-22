@@ -664,7 +664,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -107729131
-  m_SortingLayer: -3
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 9ac8c57be489adc438c0f9850fcf618d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -977,7 +977,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -331.51, y: 127.299995}
+  m_AnchoredPosition: {x: -331.51, y: 187.00002}
   m_SizeDelta: {x: 45.66, y: 45.66}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &227824863
@@ -1461,7 +1461,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -240.19, y: 127.299995}
+  m_AnchoredPosition: {x: -240.19, y: 187.00002}
   m_SizeDelta: {x: 45.66, y: 45.66}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &283646113
@@ -3269,7 +3269,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -180}
+  m_AnchoredPosition: {x: 0, y: -236}
   m_SizeDelta: {x: 505, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &602130345
@@ -3436,7 +3436,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -331.51, y: 127.299995}
+  m_AnchoredPosition: {x: -331.51, y: 187.00002}
   m_SizeDelta: {x: 45.66, y: 45.66}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &621221480
@@ -3785,7 +3785,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 374.39, y: 131.81}
+  m_AnchoredPosition: {x: 374.39, y: 193}
   m_SizeDelta: {x: 36.67, y: 36.67}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &662357970
@@ -3916,7 +3916,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -377.17, y: 127.299995}
+  m_AnchoredPosition: {x: -377.17, y: 187}
   m_SizeDelta: {x: 45.66, y: 45.66}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &772382529
@@ -5334,7 +5334,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 984351118}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.46, y: 1.17, z: 0}
+  m_LocalPosition: {x: -9, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5787,7 +5787,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -194.53, y: 127.3}
+  m_AnchoredPosition: {x: -194.53, y: 187.00003}
   m_SizeDelta: {x: 45.66, y: 45.66}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1096976121
@@ -6069,7 +6069,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 438333081
-  m_SortingLayer: -2
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -9073,7 +9073,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -285.85, y: 127.299995}
+  m_AnchoredPosition: {x: -285.85, y: 187.00002}
   m_SizeDelta: {x: 45.66, y: 45.66}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1403746700
@@ -9148,7 +9148,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -285.85, y: 127.299995}
+  m_AnchoredPosition: {x: -285.85, y: 187.00002}
   m_SizeDelta: {x: 45.66, y: 45.66}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1412543782
@@ -9802,7 +9802,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -0.000030517578, y: -180}
+  m_AnchoredPosition: {x: -0.000030517578, y: -236}
   m_SizeDelta: {x: 505, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1535387429
@@ -11064,7 +11064,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -377.17, y: 127.299995}
+  m_AnchoredPosition: {x: -377.17, y: 187.00002}
   m_SizeDelta: {x: 45.66, y: 45.66}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1930022463
@@ -11652,7 +11652,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 438333081
-  m_SortingLayer: -2
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}

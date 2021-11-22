@@ -37,7 +37,7 @@ public class HumanStage : MonoBehaviour
     {
         // 고치기
         Time.timeScale = 1;
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
     }
 
     // 옵션 화면

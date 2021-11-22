@@ -5,38 +5,41 @@ using UnityEngine.SceneManagement;
 
 public class Explan : MonoBehaviour
 {
-    //float time;
+    public GameObject UIExplainBoard;
+    public GameObject UIFirstImg;
+    public GameObject UISecondImg;
+    public GameObject UIThirdImg;
+    public GameObject UIFourthImg;
+    public GameObject UIFifthImg;
+    public GameObject UISixthImg;
+    public GameObject UISeventhImg;
 
-    //void Update()
-    //{
-    //    if (time < 0.5f)
-    //    {
-    //        GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1 - time);
-    //    }
-    //    else
-    //    {
-    //        GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, time);
-    //        if (time > 1f)
-    //        {
-    //            time = 0;
-    //        }
-    //    }
+    public GameObject UIFirst_Btn;
+    public GameObject UISecondBtn;
+    public GameObject UISecond_Btn;
+    public GameObject UIThirdBtn;
+    public GameObject UIThird_Btn;
+    public GameObject UIFourthBtn;
+    public GameObject UIFourth_Btn;
+    public GameObject UIFifthBtn;
+    public GameObject UIFifth_Btn;
+    public GameObject UISixthBtn;
+    public GameObject UISixth_Btn;
+    public GameObject UISeventhBtn;
 
-    //    time += Time.deltaTime;
-
-    //}
-
-
-    public void RankingClick()
+    public void FirstBtn()
     {
-        ResetScore();
         SceneManager.LoadScene(1);
     }
 
-    public void StartClick()
+    public void FirstImg()
     {
-        ResetScore();
         SceneManager.LoadScene(2);
+    }
+
+    public void First_Btn()
+    {
+        SceneManager.LoadScene(1);
     }
 
     public void ResetScore()
@@ -48,9 +51,8 @@ public class Explan : MonoBehaviour
         }
     }
 
-    public void Special()
+    public void Explain()
     {
-        ResetScore();
-        SceneManager.LoadScene(12);
+        UIExplainBoard.SetActive(true);
     }
 }
