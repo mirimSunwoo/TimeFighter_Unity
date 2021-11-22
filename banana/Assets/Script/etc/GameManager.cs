@@ -30,44 +30,8 @@ public class GameManager : MonoBehaviour
     public GameObject Player;
     public GameObject Portal;
 
-    //void awake()
-    //{
-    //    dontdestroyonload(gameobject);
-    //}
-
-    //void update()
-    //{
-    //    uipoint.text = (totalpoint + stagepoint).tostring();
-    //}
-
     public void NextStage()
     {
-        // Change Stage
-        //if (stageIndex < Stages.Length - 1)
-        //{
-        //    Stages[stageIndex].SetActive(false);
-        //    stageIndex++;
-        //    Stages[stageIndex].SetActive(true);
-        //    PlayerReposition();
-
-        //    UIStage.text = "STAGE " + (stageIndex + 1);
-        //}
-        //else
-        //// Game Clear
-        //{
-        //    // Player Control Lock
-        //    Time.timeScale = 0;
-        //    // Result UI
-        //    Debug.Log("1단계 클리어!");
-        //    // Restart Button UI
-        //    UIRestartBtn.SetActive(true);
-        //    Text btnText = UIRestartBtn.GetComponentInChildren<Text>();
-        //    btnText.text = "Next!";
-        //    UIRestartBtn.SetActive(true);
-        //}
-
-        // Calculate Point
-        //totalPoint += stagePoint;
         ScoreManager score = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
         score.stagePoint = 0;
     }
@@ -174,25 +138,6 @@ public class GameManager : MonoBehaviour
     void PlayerReposition()
     {
         player.transform.position = new Vector3(1, 1, -1);      // Player의 시작지점 x축, y축, z축
-        //player.VelocityZero();
     }
 
-    //public void Restart()
-    //{
-    //    ScoreManager score = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
-    //    score.stagePoint = 0;
-
-    //    Time.timeScale = 1;
-    //    SceneManager.LoadScene(2);
-    //}
-    //public void Next()
-    //{
-    //    Time.timeScale = 1;
-    //    SceneManager.LoadScene(3);
-    //}
-    //public void Home()
-    //{
-    //    Time.timeScale = 1;
-    //    SceneManager.LoadScene(0);
-    //}
 }

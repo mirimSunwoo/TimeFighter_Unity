@@ -8,9 +8,7 @@ public class PlayerMove : MonoBehaviour
     private float realMovePower = 5f; // 실제 이동 속도
     public float jumpPower = 5f;
     private float realJumpPower = 5f; // 실제 점프 힘
-    //public int maxHealth = 3;
     public GameManager gameManager;
-    //public ScoreManager scoreManager;
 
     Rigidbody2D rigid;
     SpriteRenderer spriteRenderer;
@@ -21,8 +19,6 @@ public class PlayerMove : MonoBehaviour
     bool isJumping = false;
 
     private float item_jump_cooltime;
-
-    //public int RandomInt;
 
 
     //----------------------------------------[Overrid Function]
@@ -251,34 +247,6 @@ public class PlayerMove : MonoBehaviour
         transform.position += moveVelocity * movePower * Time.deltaTime;
     }
 
-    // 블럭 효과들
-    //private void OnCollisionStay2D(Collision2D collision)
-    //{
-    //    if (collision.gameObject.CompareTag("jumpGround"))
-    //    {
-    //        realJumpPower = 10 * jumpPower;
-    //    }
-    //    else if (collision.gameObject.CompareTag("stickGround"))
-    //    {
-    //        realJumpPower = jumpPower / 2;
-    //    }
-    //    else
-    //    {
-    //        realJumpPower = jumpPower;
-    //    }
-    //    if (collision.gameObject.CompareTag("fastGround"))
-    //    {
-    //        realMovePower = 2 * movePower;
-    //    }
-    //    else if (collision.gameObject.CompareTag("slowGround"))
-    //    {
-    //        realMovePower = movePower / 2;
-    //    }
-    //    else
-    //    {
-    //        realMovePower = movePower;
-    //    }
-    //}
 
     void Jump()
     {
@@ -327,92 +295,9 @@ public class PlayerMove : MonoBehaviour
 
         // Animation
         animator.SetTrigger("doDamaged");
-        //animator.ResetTrigger("doItem");
 
         Invoke("OffDamaged", 2);    // 함수 호출
     }
-
-    //void onDamaged(Vector2 targetPos)
-    //{
-    //    // Health Down
-    //    //gameManager.HealthDown();
-
-    //    // Change Layer (Immortal Active)
-    //    gameObject.layer = 12;
-
-    //    // View Alpha
-    //    spriteRenderer.color = new Color(1, 1, 1, 0.4f);
-
-    //    // Reaction Force
-    //    int dirc = transform.position.x - targetPos.x > 0 ? 1 : -1;
-    //    rigid.AddForce(new Vector2(dirc, 1) * 3, ForceMode2D.Impulse);
-
-    //    // Animation
-    //    animator.SetTrigger("doDamaged");
-
-    //    Invoke("OffDamaged", 3);    // 함수 호출
-    //}
-
-    //void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if (collision.gameObject.tag == "Enemy")
-    //    {
-    //        // Attack
-    //        if (rigid.velocity.y < 0 && transform.position.y > collision.transform.position.y)
-    //        {
-    //            OnAttack(collision.transform);
-    //            //PlaySound("ATTACK");
-    //            audioSource.clip = audioAttack;
-    //            audioSource.Play();
-    //        }
-    //        else // Damaged
-    //            OnDamaged(collision.transform.position);
-    //    }
-    //}
-
-    //void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if (collision.gameObject.CompareTag == "Enemy")
-    //    {
-    //        if (rigid.velocity.y < 0 && transform.position.y > collision.transform.position.y)
-    //            OnAttack(collision.transform);
-    //        onDamaged(collision.transform.position);
-    //    }
-
-    //    if (collision.gameObject.CompareTag("item_jump"))
-    //    {
-    //        jumpPower = 20.0f;
-    //    }
-    //}
-
-    //void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if (collision.gameObject.tag == "Enemy")
-    //    {
-    //        // Attack
-    //        if (rigid.velocity.y < 0 && transform.position.y > collision.transform.position.y)
-    //        {
-    //            OnAttack(collision.transform);
-    //        }
-    //        else // Damaged
-    //            OnDamaged(collision.transform.position);
-    //    }
-    //}
-
-    //void OnAttack(Transform enemy)
-    //{
-    //    // Point
-    //    gameManager.stagePoint += 100;
-
-    //    // Reaction Force
-    //    rigid.AddForce(Vector2.up * 10, ForceMode2D.Impulse);
-
-    //    // Enemy Die
-    //    EnemyMove enemyMove = enemy.GetComponent<EnemyMove>();
-    //    enemyMove.OnDamaged();
-    //}
-
-
 
     void OffDamaged()
     {
@@ -424,17 +309,11 @@ public class PlayerMove : MonoBehaviour
     {
         // Sprite Alpha
         spriteRenderer.color = new Color(1, 1, 1, 0.4f);
-        // Sprite Flip Y
-        //spriteRenderer.flipY = true;
         // Collider Disable
         polygonCollider.enabled = false;
-        // Die Effect Jump
-        //rigid.AddForce(Vector2.up * 5, ForceMode2D.Impulse);
 
         // 죽는 애니메이션 넣기
         animator.SetTrigger("doDie");
-        //animator.ResetTrigger("doItem");
-        //animator.ResetTrigger("doDamaged");
     }
 
     public void VelocityZero()

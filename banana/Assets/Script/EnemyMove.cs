@@ -37,18 +37,6 @@ public class EnemyMove : MonoBehaviour
 
     }
 
-    //void OnHit(int dmg)
-    //{
-    //    health -= dmg;
-    //    spriteRenderer.color = new Color(1, 1, 1, 0.4f);
-    //    Invoke("ReturnSprite", 1.0f);
-
-    //    if (health <= 0)
-    //    {
-    //        Destroy(gameObject);
-    //    }
-    //}
-
     void ReturnSprite()
     {
         spriteRenderer.color = new Color(1, 1, 1, 1);
@@ -77,33 +65,7 @@ public class EnemyMove : MonoBehaviour
                 isLeft = true;
             }
         }
-        //if (collision.gameObject.tag == "hit")
-        //{
-        //    Hit hit = collision.gameObject.GetComponent<Hit>();
-        //    OnHit(hit.dmg);
-        //}
     }
-
-    //public void OnDamaged()
-    //{ //몬스터가 데미지를 입었을때 
-
-
-    //    //Sprite Alpha : 색상 변경 
-    //    spriteRenderer.color = new Color(1, 1, 1, 0.4f);
-
-    //    //Sprite Flip Y : 뒤집어지기 
-    //    spriteRenderer.flipY = true;
-
-    //    //Collider Disable : 콜라이더 끄기 
-    //    polygonCollider.enabled = false;
-
-    //    //Die Effect Jump : 아래로 추락(콜라이더 꺼서 바닥밑으로 추락함 )
-    //    rigid.AddForce(Vector2.up * 5, ForceMode2D.Impulse);
-
-    //    //Destroy 
-    //    Invoke("DeActive", 5);
-
-    //}
 
     public void Attack()
     {
@@ -151,25 +113,5 @@ public class EnemyMove : MonoBehaviour
         gameManager.Portal.SetActive(true);
 
     }
-
-    //public void OnDie()
-    //{
-    //    // Sprite Alpha
-    //    spriteRenderer.color = new Color(1, 1, 1, 0.4f);
-    //    // Sprite Flip Y
-    //    spriteRenderer.flipY = true;
-    //    // Collider Disable
-    //    polygonCollider.enabled = false;
-    //    // Die Effect Jump
-    //    rigid.AddForce(Vector2.up * 5, ForceMode2D.Impulse);
-    //    Destroy(gameObject, 5f);
-
-    //}
-
-    //    void DeActive()
-    //{
-    //    gameObject.SetActive(false);
-    //}
-
 
 }
