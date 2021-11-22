@@ -75,7 +75,7 @@ public class PlayerMove : MonoBehaviour
             item_jump_cooltime += Time.deltaTime;
             if (item_jump_cooltime > 10)
             {
-                jumpPower = 16.0f;
+                jumpPower = 15.0f;
             }
             animator.SetTrigger("doItem");
         }
@@ -196,7 +196,7 @@ public class PlayerMove : MonoBehaviour
                 item_jump_cooltime += Time.deltaTime;
                 if (item_jump_cooltime > 10)
                 {
-                    jumpPower = 16.0f;
+                    jumpPower = 15.0f;
                 }
                 animator.SetTrigger("doItem");
             }

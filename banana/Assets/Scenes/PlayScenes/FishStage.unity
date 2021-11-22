@@ -467,7 +467,6 @@ GameObject:
   - component: {fileID: 130581472}
   - component: {fileID: 130581471}
   - component: {fileID: 130581470}
-  - component: {fileID: 130581469}
   m_Layer: 0
   m_Name: RainbowJewelry
   m_TagString: coin
@@ -475,25 +474,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &130581469
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 130581468}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 723e76c55d3c0f54aa1427d5d6366925, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!58 &130581470
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -912,7 +892,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 438333081
-  m_SortingLayer: -2
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -2121,16 +2101,6 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: 558, y: -133, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 14
-      m_TileSpriteIndex: 16
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
   - first: {x: 552, y: -130, z: 0}
     second:
       serializedVersion: 2
@@ -2781,7 +2751,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: e29795634f706b34f8fdcb8dcb0d77ea, type: 2}
   - m_RefCount: 5
     m_Data: {fileID: 11400000, guid: c7ea6c0b4dd4d78449ae3509e903982f, type: 2}
-  - m_RefCount: 5
+  - m_RefCount: 4
     m_Data: {fileID: 11400000, guid: a7e25e9daef9fa1438951c0ac1e045f3, type: 2}
   - m_RefCount: 5
     m_Data: {fileID: 11400000, guid: e9f76c27953cd2c4fafe084d8ccc3d24, type: 2}
@@ -2842,7 +2812,7 @@ Tilemap:
     m_Data: {fileID: 1163273762731554475, guid: 7359dbf47be2ccd47ae283f3896b074c, type: 3}
   - m_RefCount: 5
     m_Data: {fileID: -3398049372582476067, guid: 7359dbf47be2ccd47ae283f3896b074c, type: 3}
-  - m_RefCount: 5
+  - m_RefCount: 4
     m_Data: {fileID: 9088622159572674830, guid: 7359dbf47be2ccd47ae283f3896b074c, type: 3}
   - m_RefCount: 5
     m_Data: {fileID: -101093733975090134, guid: 7359dbf47be2ccd47ae283f3896b074c, type: 3}
@@ -2875,7 +2845,7 @@ Tilemap:
   - m_RefCount: 8
     m_Data: {fileID: -6445325580309130246, guid: 7359dbf47be2ccd47ae283f3896b074c, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 182
+  - m_RefCount: 181
     m_Data:
       e00: 1
       e01: 0
@@ -2894,7 +2864,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 182
+  - m_RefCount: 181
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   - m_RefCount: 0
     m_Data: {r: 3.614e-41, g: 3.614e-41, b: 3.614e-41, a: 3.614e-41}
@@ -3688,7 +3658,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -107729131
-  m_SortingLayer: -3
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: caafa4675a9d3e44eb58f0d21f85bc94, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3736,7 +3706,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movePower: 5
-  jumpPower: 14
+  jumpPower: 15
   gameManager: {fileID: 1995641913}
 --- !u!95 &341834321
 Animator:
@@ -3855,7 +3825,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 4
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -4852,7 +4822,6 @@ GameObject:
   - component: {fileID: 499658132}
   - component: {fileID: 499658131}
   - component: {fileID: 499658130}
-  - component: {fileID: 499658129}
   m_Layer: 0
   m_Name: RedJewelry (1)
   m_TagString: coin
@@ -4860,25 +4829,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &499658129
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 499658128}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 723e76c55d3c0f54aa1427d5d6366925, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!58 &499658130
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5209,7 +5159,6 @@ GameObject:
   - component: {fileID: 645964072}
   - component: {fileID: 645964071}
   - component: {fileID: 645964070}
-  - component: {fileID: 645964069}
   m_Layer: 0
   m_Name: RedJewelry
   m_TagString: coin
@@ -5217,25 +5166,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &645964069
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 645964068}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 723e76c55d3c0f54aa1427d5d6366925, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!58 &645964070
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5379,9 +5309,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 4
+  m_MaxValue: 5
   m_WholeNumbers: 0
-  m_Value: 4
+  m_Value: 5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -5887,7 +5817,6 @@ GameObject:
   - component: {fileID: 704308370}
   - component: {fileID: 704308369}
   - component: {fileID: 704308368}
-  - component: {fileID: 704308367}
   m_Layer: 0
   m_Name: YellowJewelry (1)
   m_TagString: coin
@@ -5895,25 +5824,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &704308367
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 704308366}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ba98fa6960a2fe04ab7fb28721868cbc, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!58 &704308368
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -7124,7 +7034,6 @@ GameObject:
   m_Component:
   - component: {fileID: 980174995}
   - component: {fileID: 980174998}
-  - component: {fileID: 980174997}
   - component: {fileID: 980174996}
   m_Layer: 11
   m_Name: DisappearingTile
@@ -7173,19 +7082,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.6566479}
   m_EdgeRadius: 0
---- !u!114 &980174997
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 980174994}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3b368c8d4b1ac54cbb6681c12a56c32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  count: 2
 --- !u!212 &980174998
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7815,7 +7711,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 438333081
-  m_SortingLayer: -2
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -8030,7 +7926,6 @@ GameObject:
   - component: {fileID: 1147866778}
   - component: {fileID: 1147866777}
   - component: {fileID: 1147866776}
-  - component: {fileID: 1147866775}
   m_Layer: 0
   m_Name: MintJewelry (1)
   m_TagString: coin
@@ -8038,25 +7933,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &1147866775
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1147866774}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9afda2c6f94197449bd3835fb702ae7e, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!58 &1147866776
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -8185,7 +8061,6 @@ GameObject:
   - component: {fileID: 1212392487}
   - component: {fileID: 1212392486}
   - component: {fileID: 1212392485}
-  - component: {fileID: 1212392484}
   m_Layer: 0
   m_Name: MintJewelry
   m_TagString: coin
@@ -8193,25 +8068,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &1212392484
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1212392483}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9afda2c6f94197449bd3835fb702ae7e, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!58 &1212392485
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -8438,7 +8294,6 @@ GameObject:
   - component: {fileID: 1298838849}
   - component: {fileID: 1298838848}
   - component: {fileID: 1298838847}
-  - component: {fileID: 1298838846}
   m_Layer: 0
   m_Name: PurpleJewelry (2)
   m_TagString: coin
@@ -8446,25 +8301,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &1298838846
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1298838845}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 723e76c55d3c0f54aa1427d5d6366925, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!58 &1298838847
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -9203,7 +9039,6 @@ GameObject:
   - component: {fileID: 1458055159}
   - component: {fileID: 1458055158}
   - component: {fileID: 1458055157}
-  - component: {fileID: 1458055156}
   m_Layer: 0
   m_Name: PurpleJewelry
   m_TagString: coin
@@ -9211,25 +9046,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &1458055156
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1458055155}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 723e76c55d3c0f54aa1427d5d6366925, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!58 &1458055157
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -9510,7 +9326,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1488161890}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.81, y: 1.01, z: 0}
+  m_LocalPosition: {x: 0.74, y: 1.26, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 308794398}
@@ -10786,7 +10602,6 @@ GameObject:
   - component: {fileID: 1726251005}
   - component: {fileID: 1726251004}
   - component: {fileID: 1726251003}
-  - component: {fileID: 1726251002}
   m_Layer: 0
   m_Name: PurpleJewelry (1)
   m_TagString: coin
@@ -10794,25 +10609,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &1726251002
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1726251001}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 723e76c55d3c0f54aa1427d5d6366925, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!58 &1726251003
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -10913,7 +10709,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1747493330
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11446,7 +11242,6 @@ GameObject:
   - component: {fileID: 1841966687}
   - component: {fileID: 1841966686}
   - component: {fileID: 1841966685}
-  - component: {fileID: 1841966684}
   m_Layer: 0
   m_Name: YellowJewelry (2)
   m_TagString: coin
@@ -11454,25 +11249,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &1841966684
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1841966683}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ba98fa6960a2fe04ab7fb28721868cbc, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!58 &1841966685
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -11565,7 +11341,6 @@ GameObject:
   - component: {fileID: 1864526998}
   - component: {fileID: 1864526997}
   - component: {fileID: 1864526996}
-  - component: {fileID: 1864526995}
   m_Layer: 0
   m_Name: RainbowJewelry (1)
   m_TagString: coin
@@ -11573,25 +11348,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &1864526995
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1864526994}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 723e76c55d3c0f54aa1427d5d6366925, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!58 &1864526996
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -12196,7 +11952,6 @@ GameObject:
   - component: {fileID: 2024595962}
   - component: {fileID: 2024595961}
   - component: {fileID: 2024595960}
-  - component: {fileID: 2024595959}
   m_Layer: 0
   m_Name: YellowJewelry
   m_TagString: coin
@@ -12204,25 +11959,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &2024595959
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2024595958}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ba98fa6960a2fe04ab7fb28721868cbc, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!58 &2024595960
 CircleCollider2D:
   m_ObjectHideFlags: 0
