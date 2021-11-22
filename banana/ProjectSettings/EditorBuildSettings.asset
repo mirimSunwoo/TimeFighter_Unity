@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/FirstView.unity
+    path: Assets/Scenes/PlayScenes/FirstView.unity
     guid: c8379d651e676fb43956455c17739d7d
   - enabled: 1
     path: Assets/Scenes/Ranking.unity

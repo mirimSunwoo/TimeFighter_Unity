@@ -185,9 +185,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 3
+  m_MaxValue: 4
   m_WholeNumbers: 0
-  m_Value: 3
+  m_Value: 4
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -620,7 +620,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 96626539}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3, y: -99, z: -6675.0503}
+  m_LocalPosition: {x: -3, y: -12, z: -6675.0503}
   m_LocalScale: {x: 149.4996, y: 60.43955, z: 67.42475}
   m_Children: []
   m_Father: {fileID: 1166294063}
@@ -1513,7 +1513,6 @@ GameObject:
   - component: {fileID: 296816101}
   - component: {fileID: 296816100}
   - component: {fileID: 296816099}
-  - component: {fileID: 296816098}
   m_Layer: 0
   m_Name: PurpleJewelry
   m_TagString: coin
@@ -1521,25 +1520,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &296816098
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 296816097}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 723e76c55d3c0f54aa1427d5d6366925, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!58 &296816099
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1979,7 +1959,6 @@ GameObject:
   - component: {fileID: 396213173}
   - component: {fileID: 396213172}
   - component: {fileID: 396213171}
-  - component: {fileID: 396213170}
   m_Layer: 0
   m_Name: YellowJewelry
   m_TagString: coin
@@ -1987,25 +1966,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &396213170
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 396213169}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ba98fa6960a2fe04ab7fb28721868cbc, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!58 &396213171
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3968,7 +3928,6 @@ GameObject:
   - component: {fileID: 772396656}
   - component: {fileID: 772396655}
   - component: {fileID: 772396654}
-  - component: {fileID: 772396653}
   m_Layer: 0
   m_Name: RainbowJewelry
   m_TagString: coin
@@ -3976,25 +3935,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &772396653
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 772396652}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 723e76c55d3c0f54aa1427d5d6366925, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!58 &772396654
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5161,7 +5101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movePower: 5
-  jumpPower: 13
+  jumpPower: 16
   gameManager: {fileID: 45343625}
 --- !u!95 &984351120
 Animator:
@@ -5269,7 +5209,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 4
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -5460,7 +5400,6 @@ GameObject:
   - component: {fileID: 997203550}
   - component: {fileID: 997203549}
   - component: {fileID: 997203548}
-  - component: {fileID: 997203547}
   m_Layer: 0
   m_Name: PurpleJewelry (1)
   m_TagString: coin
@@ -5468,25 +5407,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &997203547
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 997203546}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 723e76c55d3c0f54aa1427d5d6366925, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!58 &997203548
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -9332,7 +9252,6 @@ GameObject:
   - component: {fileID: 1445041515}
   - component: {fileID: 1445041514}
   - component: {fileID: 1445041513}
-  - component: {fileID: 1445041512}
   m_Layer: 0
   m_Name: RedJewelry
   m_TagString: coin
@@ -9340,25 +9259,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &1445041512
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1445041511}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 723e76c55d3c0f54aa1427d5d6366925, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!58 &1445041513
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -10306,7 +10206,6 @@ GameObject:
   - component: {fileID: 1717364497}
   - component: {fileID: 1717364496}
   - component: {fileID: 1717364495}
-  - component: {fileID: 1717364494}
   m_Layer: 0
   m_Name: MintJewelry
   m_TagString: coin
@@ -10314,25 +10213,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &1717364494
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1717364493}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9afda2c6f94197449bd3835fb702ae7e, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!58 &1717364495
 CircleCollider2D:
   m_ObjectHideFlags: 0

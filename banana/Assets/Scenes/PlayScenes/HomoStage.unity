@@ -368,7 +368,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 834321901}
-        m_TargetAssemblyTypeName: TrilobiteStage, Assembly-CSharp
+        m_TargetAssemblyTypeName: HomoStage, Assembly-CSharp
         m_MethodName: close
         m_Mode: 1
         m_Arguments:
@@ -1377,7 +1377,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 834321901}
-        m_TargetAssemblyTypeName: TrilobiteStage, Assembly-CSharp
+        m_TargetAssemblyTypeName: HomoStage, Assembly-CSharp
         m_MethodName: restart
         m_Mode: 1
         m_Arguments:
@@ -1989,7 +1989,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 834321901}
-        m_TargetAssemblyTypeName: TrilobiteStage, Assembly-CSharp
+        m_TargetAssemblyTypeName: HomoStage, Assembly-CSharp
         m_MethodName: Home
         m_Mode: 1
         m_Arguments:
@@ -2185,7 +2185,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 4
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -2267,7 +2267,6 @@ GameObject:
   - component: {fileID: 433175771}
   - component: {fileID: 433175770}
   - component: {fileID: 433175769}
-  - component: {fileID: 433175768}
   m_Layer: 0
   m_Name: RainbowJewelry
   m_TagString: coin
@@ -2275,25 +2274,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &433175768
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 433175767}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 723e76c55d3c0f54aa1427d5d6366925, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!58 &433175769
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2861,7 +2841,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 512689431}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.55, y: 24.78, z: 0}
+  m_LocalPosition: {x: 6.59, y: 14.59, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3342,7 +3322,6 @@ GameObject:
   - component: {fileID: 712744126}
   - component: {fileID: 712744125}
   - component: {fileID: 712744124}
-  - component: {fileID: 712744123}
   m_Layer: 0
   m_Name: PurpleJewelry (1)
   m_TagString: coin
@@ -3350,25 +3329,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &712744123
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 712744122}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 723e76c55d3c0f54aa1427d5d6366925, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!58 &712744124
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3817,7 +3777,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 834321900}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fcbcfb7b634bbd4298398e80c9d2966, type: 3}
+  m_Script: {fileID: 11500000, guid: f2159c7140670a04ca00dd647a39fab8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   UIOptionImg: {fileID: 892027390}
@@ -4002,7 +3962,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 834321901}
-        m_TargetAssemblyTypeName: TrilobiteStage, Assembly-CSharp
+        m_TargetAssemblyTypeName: HomoStage, Assembly-CSharp
         m_MethodName: Next
         m_Mode: 1
         m_Arguments:
@@ -5147,7 +5107,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -5659,7 +5619,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 834321901}
-        m_TargetAssemblyTypeName: TrilobiteStage, Assembly-CSharp
+        m_TargetAssemblyTypeName: HomoStage, Assembly-CSharp
         m_MethodName: Home
         m_Mode: 1
         m_Arguments:
@@ -5824,7 +5784,6 @@ GameObject:
   - component: {fileID: 1101712597}
   - component: {fileID: 1101712596}
   - component: {fileID: 1101712595}
-  - component: {fileID: 1101712594}
   m_Layer: 0
   m_Name: PurpleJewelry
   m_TagString: coin
@@ -5832,25 +5791,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &1101712594
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1101712593}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 723e76c55d3c0f54aa1427d5d6366925, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!58 &1101712595
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -6043,7 +5983,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9381fbc8854442e47b9d9bee9e6e3cfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 6
   enemyhealth: 4
   HealthBar: {fileID: 1134998813}
   gameManager: {fileID: 251438008}
@@ -6541,7 +6481,6 @@ GameObject:
   - component: {fileID: 1212808880}
   - component: {fileID: 1212808879}
   - component: {fileID: 1212808878}
-  - component: {fileID: 1212808877}
   m_Layer: 0
   m_Name: YellowJewelry
   m_TagString: coin
@@ -6549,25 +6488,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &1212808877
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1212808876}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ba98fa6960a2fe04ab7fb28721868cbc, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!58 &1212808878
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -10932,7 +10852,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 5}
+  m_Size: {x: 4, y: 5}
   m_EdgeRadius: 0
 --- !u!4 &1766903272
 Transform:
@@ -10942,7 +10862,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1766903270}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.08, y: 24.46, z: 0}
+  m_LocalPosition: {x: -1.61, y: 24.76, z: 0}
   m_LocalScale: {x: 0.3, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -11084,7 +11004,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 834321901}
-        m_TargetAssemblyTypeName: TrilobiteStage, Assembly-CSharp
+        m_TargetAssemblyTypeName: HomoStage, Assembly-CSharp
         m_MethodName: Retry
         m_Mode: 1
         m_Arguments:
@@ -11321,7 +11241,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 834321901}
-        m_TargetAssemblyTypeName: TrilobiteStage, Assembly-CSharp
+        m_TargetAssemblyTypeName: HomoStage, Assembly-CSharp
         m_MethodName: option
         m_Mode: 1
         m_Arguments:
@@ -11512,7 +11432,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 5}
+  m_Size: {x: 4, y: 5}
   m_EdgeRadius: 0
 --- !u!4 &1915077460
 Transform:
@@ -11522,7 +11442,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1915077458}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -23.87, y: 26.049997, z: 0}
+  m_LocalPosition: {x: -24.35, y: 26.31, z: 0}
   m_LocalScale: {x: 0.3, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -11553,8 +11473,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1920867005}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6, y: 25, z: -6675.0503}
-  m_LocalScale: {x: 149.75711, y: 114.7839, z: 89.67492}
+  m_LocalPosition: {x: 2, y: -3, z: -6675.0503}
+  m_LocalScale: {x: 160.24011, y: 122.81878, z: 95.95217}
   m_Children: []
   m_Father: {fileID: 1892631974}
   m_RootOrder: 1
@@ -12002,7 +11922,6 @@ GameObject:
   - component: {fileID: 1977623240}
   - component: {fileID: 1977623239}
   - component: {fileID: 1977623238}
-  - component: {fileID: 1977623237}
   m_Layer: 0
   m_Name: RedJewelry
   m_TagString: coin
@@ -12010,25 +11929,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &1977623237
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1977623236}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 723e76c55d3c0f54aa1427d5d6366925, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!58 &1977623238
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -12408,7 +12308,6 @@ GameObject:
   - component: {fileID: 2022007004}
   - component: {fileID: 2022007003}
   - component: {fileID: 2022007002}
-  - component: {fileID: 2022007001}
   m_Layer: 0
   m_Name: MintJewelry
   m_TagString: coin
@@ -12416,25 +12315,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &2022007001
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2022007000}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9afda2c6f94197449bd3835fb702ae7e, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!58 &2022007002
 CircleCollider2D:
   m_ObjectHideFlags: 0

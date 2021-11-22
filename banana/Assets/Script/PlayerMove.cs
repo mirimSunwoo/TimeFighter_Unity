@@ -91,7 +91,7 @@ public class PlayerMove : MonoBehaviour
             animator.SetBool("isJumping", false);   // Landing
 
         // Enemy hit
-        if (collision.gameObject.tag == "Enemy" && !collision.isTrigger && rigid.velocity.y < -4f)  // -6f : 값이 작아질 수록 판정이 약해짐
+        if (collision.gameObject.tag == "Enemy" && !collision.isTrigger && rigid.velocity.y < -5f)  // -6f : 값이 커질 수록 판정이 약해짐
         {
 
             EnemyMove enemy = collision.gameObject.GetComponent<EnemyMove>();
@@ -168,6 +168,7 @@ public class PlayerMove : MonoBehaviour
     // 포탈 들어가면 화면 켜짐
     void clear()
     {
+        Time.timeScale = 0;
         // Next Stage
         gameManager.UIImg.SetActive(true);
         gameManager.UINextBtn.SetActive(true);
