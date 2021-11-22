@@ -158,8 +158,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0.00000095367, y: -40.444}
-  m_SizeDelta: {x: 203.81, y: 29.113}
+  m_AnchoredPosition: {x: 0.000005722, y: -40.443}
+  m_SizeDelta: {x: 258.2263, y: 29.113}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &35557619
 MonoBehaviour:
@@ -194,7 +194,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uBBF8\uC0DD\uBB3C\uC744 \uD574\uCE58\uC6CC\uB77C!"
+  m_Text: "\uAE4C\uCE60\uD55C\uBBF8\uC0DD\uBB3C \uD63C\uB0B4\uC8FC\uC790!"
 --- !u!222 &35557620
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -403,6 +403,49 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 66101058}
   m_CullTransparentMesh: 1
+--- !u!1 &71754696
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 71754698}
+  - component: {fileID: 71754697}
+  m_Layer: 0
+  m_Name: DataManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &71754697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 71754696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43415d2324486f54f9e2bd481b31e478, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &71754698
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 71754696}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 26
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &223878597
 GameObject:
   m_ObjectHideFlags: 0
@@ -641,7 +684,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 438333081
-  m_SortingLayer: -2
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -822,7 +865,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 438333081
-  m_SortingLayer: -2
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -3626,7 +3669,6 @@ GameObject:
   - component: {fileID: 494406229}
   - component: {fileID: 494406228}
   - component: {fileID: 494406227}
-  - component: {fileID: 494406226}
   m_Layer: 0
   m_Name: PurpleJewelry
   m_TagString: coin
@@ -3634,25 +3676,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &494406226
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 494406225}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 723e76c55d3c0f54aa1427d5d6366925, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!58 &494406227
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3791,9 +3814,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c96867f6777a7814a8683df6eca37afa, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 10110eb1aa1c22246a338fcb945b6887, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.826
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -4057,7 +4080,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -377.17, y: 134}
+  m_AnchoredPosition: {x: -377.17, y: 200.99998}
   m_SizeDelta: {x: 45.66, y: 45.66}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &567626550
@@ -4452,8 +4475,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -0.0000019073, y: -126.26}
-  m_SizeDelta: {x: 267.59, y: 110.604}
+  m_AnchoredPosition: {x: -0.0000019073, y: -124.99999}
+  m_SizeDelta: {x: 267.59, y: 85.9592}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &631808828
 MonoBehaviour:
@@ -4488,7 +4511,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uBBF8\uC0DD\uBB3C\uC774 \uB354 \uD070 \uBBF8\uC0DD\uBB3C\uC744\n\uD574\uCE58\uC6E0\uC2B5\uB2C8\uB2E4!\n~~~~~~~\n~~~~~~~"
+  m_Text: "\uB354 \uD070 \uBBF8\uC0DD\uBB3C\uD55C\uD14C \uC0B4\uC544\uB0A8\uB2E4\uB2C8
+    \uB300\uB2E8\uD55C\uAC78? \n\uB354 \uB3C4\uC804\uD560\uB798?"
 --- !u!222 &631808829
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4603,7 +4627,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -285.85, y: 134}
+  m_AnchoredPosition: {x: -285.85, y: 200.99998}
   m_SizeDelta: {x: 45.66, y: 45.66}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &653230312
@@ -4885,7 +4909,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -180}
+  m_AnchoredPosition: {x: 0, y: -253}
   m_SizeDelta: {x: 505, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &796794832
@@ -5497,7 +5521,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -331.51, y: 134}
+  m_AnchoredPosition: {x: -331.51, y: 200.99998}
   m_SizeDelta: {x: 45.66, y: 45.66}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &917798192
@@ -5750,7 +5774,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -240.19, y: 134}
+  m_AnchoredPosition: {x: -240.19, y: 200.99998}
   m_SizeDelta: {x: 45.66, y: 45.66}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1081177214
@@ -6041,7 +6065,6 @@ GameObject:
   - component: {fileID: 1189372314}
   - component: {fileID: 1189372313}
   - component: {fileID: 1189372316}
-  - component: {fileID: 1189372315}
   m_Layer: 0
   m_Name: YellowJewelry
   m_TagString: coin
@@ -6114,25 +6137,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1189372315
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1189372312}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ba98fa6960a2fe04ab7fb28721868cbc, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!58 &1189372316
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -6215,7 +6219,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1380799137}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -13.81, y: 0.72, z: 0}
+  m_LocalPosition: {x: -9, y: 0.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -6274,7 +6278,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movePower: 5
-  jumpPower: 16
+  jumpPower: 14
   gameManager: {fileID: 398129520}
 --- !u!95 &1380799141
 Animator:
@@ -6336,7 +6340,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 4
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -6430,9 +6434,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000025944, y: -79.729996}
+  m_AnchoredPosition: {x: 0, y: -79.72999}
   m_SizeDelta: {x: 81.1322, y: 50}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.49999958, y: 0.5}
 --- !u!212 &1420135225
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7309,8 +7313,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0.000015976993, y: -125.00001}
-  m_SizeDelta: {x: 251.97, y: 107.5052}
+  m_AnchoredPosition: {x: 0.000015976993, y: -122.8}
+  m_SizeDelta: {x: 251.97, y: 81.5633}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1602634146
 MonoBehaviour:
@@ -7345,7 +7349,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uBBF8\uC0DD\uBB3C\uC774 \uB354 \uD070 \uBBF8\uC0DD\uBB3C\uC5D0\uAC8C\n\uC7A1\uC544\uBA39\uD614\uC2B5\uB2C8\uB2E4!\n~~~~~~~\n~~~~~~~"
+  m_Text: "\uC73C\uC545!! \uB354 \uD070 \uBBF8\uC0DD\uBB3C\uD55C\uD14C \uC7A1\uC544\uBA39\uD600
+    \uBC84\uB838\uB2E4!  \n\uB2E4\uC2DC \uB3C4\uC804\uD560\uB798?"
 --- !u!222 &1602634147
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7717,7 +7722,6 @@ GameObject:
   - component: {fileID: 1719017222}
   - component: {fileID: 1719017221}
   - component: {fileID: 1719017220}
-  - component: {fileID: 1719017219}
   m_Layer: 0
   m_Name: RainbowJewelry
   m_TagString: coin
@@ -7725,25 +7729,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &1719017219
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1719017218}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 723e76c55d3c0f54aa1427d5d6366925, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!58 &1719017220
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -7905,7 +7890,6 @@ GameObject:
   - component: {fileID: 1749020926}
   - component: {fileID: 1749020925}
   - component: {fileID: 1749020928}
-  - component: {fileID: 1749020927}
   m_Layer: 0
   m_Name: RedJewelry
   m_TagString: coin
@@ -7978,25 +7962,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1749020927
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1749020924}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 723e76c55d3c0f54aa1427d5d6366925, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!58 &1749020928
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -8385,7 +8350,6 @@ GameObject:
   - component: {fileID: 1834927416}
   - component: {fileID: 1834927415}
   - component: {fileID: 1834927418}
-  - component: {fileID: 1834927417}
   m_Layer: 0
   m_Name: MintJewelry
   m_TagString: coin
@@ -8458,25 +8422,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1834927417
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1834927414}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9afda2c6f94197449bd3835fb702ae7e, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!58 &1834927418
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -8593,7 +8538,6 @@ GameObject:
   - component: {fileID: 1869928153}
   - component: {fileID: 1869928152}
   - component: {fileID: 1869928151}
-  - component: {fileID: 1869928150}
   m_Layer: 0
   m_Name: PurpleJewelry (1)
   m_TagString: coin
@@ -8601,25 +8545,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &1869928150
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1869928149}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 723e76c55d3c0f54aa1427d5d6366925, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!58 &1869928151
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -8735,7 +8660,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -331.51, y: 134}
+  m_AnchoredPosition: {x: -331.51, y: 201}
   m_SizeDelta: {x: 45.66, y: 45.66}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1906561307
@@ -8816,7 +8741,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -180}
+  m_AnchoredPosition: {x: 0, y: -245}
   m_SizeDelta: {x: 505, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1910008949
@@ -9127,7 +9052,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -285.85, y: 134}
+  m_AnchoredPosition: {x: -285.85, y: 200.99998}
   m_SizeDelta: {x: 45.66, y: 45.66}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1945943844
@@ -9203,7 +9128,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 374.39, y: 131.81}
+  m_AnchoredPosition: {x: 374.39, y: 196}
   m_SizeDelta: {x: 36.67, y: 36.67}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2040475951
@@ -9334,7 +9259,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -194.53, y: 134}
+  m_AnchoredPosition: {x: -194.53, y: 200.99998}
   m_SizeDelta: {x: 45.66, y: 45.66}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2043565328
@@ -9862,7 +9787,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -377.17, y: 134}
+  m_AnchoredPosition: {x: -377.17, y: 200.99998}
   m_SizeDelta: {x: 45.66, y: 45.66}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2134507342
